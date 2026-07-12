@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Factory-Pin - รวมลิงก์ดีดี</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏭</text></svg>">
+</head>
+<body>
+<div class="loadWrap" id="load">
+<div class="loadLogo">🏭</div>
+<div class="loadText">กำลังเตรียมลิงก์ดีดี...</div>
+<div class="loadBar"><div class="loadFill" id="loadFill"></div></div>
+</div>
+
+<div class="bgLayer" id="bg"></div>
+
+<div class="hintBox" id="hint">🌈 เลื่อนขึ้นด้านบน จะเจอลิงก์พิเศษ!</div>
+<a href="https://www.youtube.com/results?search_query=my+little+pony" target="_blank" rel="noopener" class="rainbowLink" id="rainbow">✨ มายลิตเติ้ลโพนี่ ✨</a>
+
+<div class="charWrap" id="char">
+<div class="charBody">🐙</div>
+<div class="charLeg l"></div>
+<div class="charLeg r"></div>
+</div>
+<div class="talkBubble" id="talk"></div>
+<div class="btnGroup" id="btns" style="display:none;">
+<button class="btnYes" onclick="replyYes()">ใช่ครับ ชอบมาก! 💖</button>
+<button class="btnNo" onclick="replyNo()">ดูอื่นก่อนนะ 😊</button>
+</div>
+
+<header class="pageHead">
+<div class="brand">
+<span class="logoIcon">🏭</span>
+<span class="brandName">Factory-Pin</span>
+</div>
+<p class="slogan">รวมลิงก์ดีดี ครบจบที่เดียว</p>
+</header>
+
+<main class="linkContainer" id="links"></main>
+
+<script src="main.js"></script>
+</body>
+</html>
