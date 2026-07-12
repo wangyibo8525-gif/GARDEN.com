@@ -1,0 +1,66 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Noto Sans Thai',sans-serif}
+:root{--prim:#7dd3fc;--sec:#4ade80;--acc:#fbbf24;--bg1:#1a4b7a;--bg2:#051329;--bg3:#01050f;--txt:#e0f7ff;--card:rgba(10,40,70,.5);--bord:rgba(100,200,255,.3)}
+body{color:var(--txt);overflow-x:hidden;padding-top:100px}
+
+.loadWrap{position:fixed;inset:0;background:var(--bg3);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:.8s}
+.loadLogo{font-size:4rem;margin-bottom:1rem;animation:pulse 1.5s infinite alternate}
+.loadText{font-size:1.2rem;color:var(--sec);margin-bottom:1.5rem}
+.loadBar{width:320px;height:12px;background:#166534;border-radius:6px;overflow:hidden}
+.loadFill{height:100%;width:0;background:var(--sec);transition:.3s}
+
+.bgLayer{position:fixed;inset:0;z-index:-2;background:linear-gradient(180deg,var(--bg1),var(--bg2),var(--bg3))}
+.bgLayer::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 20%,rgba(125,211,252,.12),transparent 65%);animation:wave 9s infinite alternate}
+
+.rainbowLink{position:fixed;top:25px;left:50%;transform:translateX(-50%);padding:.9rem 2rem;border-radius:50px;font-weight:800;text-decoration:none;z-index:100;opacity:0;transition:all .5s;
+background:linear-gradient(90deg,#ff4757,#ffa502,#ffd700,#2ed573,#1e90ff,#6c5ce7);color:#fff;animation:rainbow 2.5s linear infinite;background-size:600% 100%}
+.rainbowLink.show{opacity:1}
+.hintBox{position:fixed;bottom:35px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.85);color:#ffd700;padding:1.1rem 1.8rem;border-radius:12px;z-index:999;font-weight:700;animation:bounce 1s infinite alternate}
+
+.charWrap{position:fixed;bottom:-120px;left:-100px;width:80px;height:100px;z-index:998;transition:all 3.5s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.charBody{font-size:4rem;text-align:center;position:relative;z-index:2}
+.charLeg{position:absolute;bottom:0;width:14px;height:40px;background:var(--prim);border-radius:5px}
+.charLeg.l{left:18px;animation:walkL .45s infinite alternate}
+.charLeg.r{right:18px;animation:walkR .45s infinite alternate}
+.charWrap.arrive{left:12%;bottom:60px}
+.talkBubble{position:fixed;bottom:200px;left:12%;background:rgba(255,255,255,.96);color:#1a1a2e;padding:1.4rem 1.8rem;border-radius:18px;font-size:1.25rem;font-weight:600;z-index:999;clip-path:polygon(0 0,100% 0,100% 85%,28% 85%,0 100%,0 15%);opacity:0;transition:all .5s}
+.talkBubble.show{opacity:1}
+.btnGroup{position:fixed;bottom:110px;left:12%;display:flex;gap:1.2rem;flex-wrap:wrap;z-index:999}
+.btnGroup button{padding:.9rem 1.6rem;border:none;border-radius:10px;font-weight:700;cursor:pointer;transition:.3s}
+.btnYes{background:var(--sec);color:var(--bg3)}
+.btnYes:hover{background:#22c55e;transform:translateY(-2px)}
+.btnNo{background:#94a3b8;color:var(--bg3)}
+.btnNo:hover{background:#64748b;transform:translateY(-2px)}
+
+.pageHead{background:rgba(5,20,40,.85);backdrop-filter:blur(12px);padding:1.5rem 5%;border-bottom:2px solid var(--bord);position:fixed;top:0;left:0;right:0;z-index:10;text-align:center}
+.backBtn{position:absolute;left:5%;top:50%;transform:translateY(-50%);color:var(--prim);font-weight:700;text-decoration:none;transition:.3s}
+.backBtn:hover{color:var(--sec)}
+.brand{display:flex;align-items:center;justify-content:center;gap:.8rem;margin-bottom:.5rem}
+.logoIcon{font-size:2rem}
+.brandName{font-size:1.8rem;font-weight:900;color:var(--prim)}
+.slogan{font-size:1rem;opacity:.9}
+
+.linkContainer,.infoBox{padding:2rem 5%;max-width:900px;margin:0 auto}
+.ddCard{background:var(--card);border-left:5px solid var(--prim);padding:1.8rem;margin-bottom:1.5rem;border-radius:12px;transition:.3s;backdrop-filter:blur(6px)}
+.ddCard:hover{transform:translateX(10px);background:rgba(20,60,100,.6);border-left-color:var(--sec)}
+.ddCard h2{font-size:1.4rem;font-weight:800;margin-bottom:1rem;color:var(--prim)}
+.ddCard p{opacity:.9;margin-bottom:.8rem}
+.linkRow{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+.linkBtn{flex:1;min-width:220px;padding:.8rem 1.2rem;background:rgba(74,222,128,.15);border:1px solid var(--sec);border-radius:8px;text-decoration:none;color:var(--sec);font-weight:600;display:flex;align-items:center;justify-content:space-between;gap:.5rem;transition:.3s}
+.linkBtn:hover{background:rgba(74,222,128,.25);transform:translateY(-2px)}
+.copyBtn{background:var(--acc);border:none;border-radius:6px;padding:.5rem .8rem;color:#000;font-weight:700;cursor:pointer;transition:.2s}
+.copyBtn:hover{background:#fcd34d;transform:scale(1.05)}
+
+@keyframes pulse{0%{opacity:.8;transform:scale(.95)}100%{opacity:1;transform:scale(1.05)}}
+@keyframes wave{0%{transform:translateY(-15px) scale(1.03)}100%{transform:translateY(15px) scale(.97)}}
+@keyframes rainbow{0%{background-position:0% 50%}100%{background-position:600% 50%}}
+@keyframes bounce{0%{transform:translateX(-50%) translateY(-5px)}100%{transform:translateX(-50%) translateY(5px)}}
+@keyframes walkL{0%{transform:rotate(-18deg)}100%{transform:rotate(18deg)}}
+@keyframes walkR{0%{transform:rotate(18deg)}100%{transform:rotate(-18deg)}}
+
+@media(max-width:600px){
+.pageHead{padding:1.2rem 4%}
+.brandName{font-size:1.5rem}
+.charWrap,.talkBubble,.btnGroup{left:5%}
+.linkRow{flex-direction:column}
+.linkBtn{width:100%}
+}
